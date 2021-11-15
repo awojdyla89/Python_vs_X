@@ -1,8 +1,9 @@
 ## Python Vs X
 
-#### Contributor: Adam C Wojdyla
-#### Course: CS-4050 Algorithms and Algorithms and Analysis
-#### Date of Completion: 11/14/2021
+#### **Contributor:** Adam C Wojdyla
+#### **Course:** CS-4050 Algorithms and Algorithms and Analysis
+#### **Date of Completion:** 11/14/2021
+
 
 ### Coding directions
 
@@ -10,8 +11,8 @@ For this assignment you will choose any one of the Programming Assignments you h
 
 ### Functions implemented
 
-- Assignment 2: Bubble Sort Radix Sort
-- Language chosen to compare: JavaScript
+- Assignment 2: **Bubble Sort - Radix Sort**
+- Language chosen to compare: **JavaScript**
 
 ### Visualiztion 
 
@@ -27,3 +28,7 @@ For this assignment you will choose any one of the Programming Assignments you h
 - Each data point represents various datasets ranging from 500-40000 elements.
 - Each dataset is randomized.
 - Each dataset runs 10 iterations and takes the average run time per iteration.
+
+### Results
+- Bubble Sort - Both algorithms are very similar in implementation. For the largest dataset of 40k elements JavaScript's average was ~6 seconds per iteration vs Python's ~111 seconds per iteration to sort.
+- Radix Sort - Again, very similar in implementation. For the largest dataset of 40k elements JavaScripts average was ~0.03 per iteration vs Python's ~0.07 per iteration to sort.
