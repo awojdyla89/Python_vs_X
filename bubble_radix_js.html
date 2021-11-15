@@ -1,0 +1,96 @@
+<!-- 
+  JavaScripts Bubble Sort vs Radix Sort.
+  Canvas JS graph animation to show the time complexities.
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "dark2",
+          title: {
+            text: "Javascript: Bubble Sort/ Radix Sort",
+            fontSize: 40
+          },
+          legend: {
+            verticalAlign: "top",
+            fontSize: 20,
+            dockInsidePlotArea: true,
+          },
+          axisX: {
+            title: "List Size",
+            titleFontColor: "red",
+            // interval: 1500,
+            labelAngle: -50,
+          },
+          axisY: {
+            title: "Seconds",
+            titleFontColor: "red",
+            lineColor: "#6D78AD",
+            gridThickness: 0,
+            lineThickness: 1,
+          },
+
+          data: [
+            {
+              type: "line",
+              name: "Bubble Sort",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.00023471949696540835 },
+                { x: 500, y: 0.0011239048004150392 },
+                { x: 1000, y: 0.004298630398511887 },
+                { x: 2500, y: 0.024825310397148134 },
+                { x: 5000, y: 0.10764905130267144 },
+                { x: 7500, y: 0.22904383990168573 },
+                { x: 10000, y: 0.4315716277003288 },
+                { x: 20000, y: 1.7608885702967643 },
+                {
+                  x: 30000,
+                  y: 3.7464952462017536,
+                  indexLabel: "O(n^2)",
+                  indexLabelFontColor: "red",
+                  indexLabelFontSize: 20,
+                },
+                { x: 40000, y: 6.337432563197613 },
+              ],
+            },
+            {
+              type: "line",
+              name: "Radix",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.00010166070461273194 },
+                { x: 500, y: 0.00044004269838333134 },
+                { x: 1000, y: 0.00046579220294952397 },
+                { x: 2500, y: 0.001545291805267334 },
+                { x: 5000, y: 0.002865311497449875 },
+                { x: 7500, y: 0.003907053297758103 },
+                { x: 10000, y: 0.0049298179984092715 },
+                { x: 20000, y: 0.01429188579916954 },
+                {
+                  x: 30000,
+                  y: 0.023930758100748063,
+                  indexLabel: "O(n*lg(n))",
+                  indexLabelFontColor: "red",
+                  indexLabelFontSize: 20,
+                },
+                { x: 40000, y: 0.03047450699806213 },
+              ],
+            },
+          ],
+        });
+        chart.render();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="chartContainer" style="height: 750px; width: 100%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>

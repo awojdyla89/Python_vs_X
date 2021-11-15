@@ -1,0 +1,85 @@
+<!-- 
+  JavaScript vs Python Bubble Sort.
+  Canvas JS graph animation to show the time complexities.
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "dark2",
+          title: {
+            text: "Bubble Sort: Avg Per Iteration",
+			fontSize: 40
+          },
+          legend: {
+            verticalAlign: "top",
+            fontSize: 20,
+            dockInsidePlotArea: true,
+          },
+          axisX: {
+            title: "List Size",
+            titleFontColor: "red",
+            // interval: 1500,
+            labelAngle: -50,
+          },
+          axisY: {
+            title: "Seconds",
+            titleFontColor: "red",
+            lineColor: "#6D78AD",
+            gridThickness: 0,
+            lineThickness: 1,
+            // interval: 5,
+          },
+
+          data: [
+            {
+              type: "line",
+              name: "Python",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.0006409183999999998 },
+                { x: 500, y: 0.015194332100000003 },
+                { x: 1000, y: 0.0679021512 },
+                { x: 2500, y: 0.4185393221999999 },
+                { x: 5000, y: 1.643475988 },
+                { x: 7500, y: 3.7286983938000007 },
+                { x: 10000, y: 6.678682073199999 },
+                { x: 20000, y: 26.6477339959 },
+                { x: 30000, y: 60.262566146999994 },
+                { x: 40000, y: 111.12572846019998 },
+              ],
+            },
+            {
+              type: "line",
+              name: "Javascript",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.00023471949696540835 },
+                { x: 500, y: 0.0011239048004150392 },
+                { x: 1000, y: 0.004298630398511887 },
+                { x: 2500, y: 0.024825310397148134 },
+                { x: 5000, y: 0.10764905130267144 },
+                { x: 7500, y: 0.22904383990168573 },
+                { x: 10000, y: 0.4315716277003288 },
+                { x: 20000, y: 1.7608885702967643 },
+                { x: 30000, y: 3.7464952462017536 },
+                { x: 40000, y: 6.337432563197613 },
+              ],
+            },
+          ],
+        });
+        chart.render();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="chartContainer" style="height: 750px; width: 100%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>

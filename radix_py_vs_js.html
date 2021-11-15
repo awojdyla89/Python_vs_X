@@ -1,0 +1,86 @@
+<!-- 
+  JavaScript vs Python Radix Sort.
+  Canvas JS graph animation to show the time complexities.
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "dark2",
+          title: {
+            text: "Radix: Avg Per Iteration",
+			fontSize: 40
+          },
+          legend: {
+            verticalAlign: "top",
+            fontSize: 20,
+            dockInsidePlotArea: true,
+          },
+          axisX: {
+            title: "List Size",
+            titleFontColor: "red",
+            // interval: 10000,
+            labelAngle: -50,
+          },
+          axisY: {
+            title: "Seconds",
+            titleFontColor: "red",
+            lineColor: "#6D78AD",
+            gridThickness: 0,
+            lineThickness: 1,
+          },
+
+          data: [
+            {
+              type: "line",
+              name: "Python",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.00006917470000189496 },
+                { x: 500, y: 0.00039700930001345113 },
+                { x: 1000, y: 0.0008162432000062836 },
+                { x: 2500, y: 0.0030936802000269383 },
+                { x: 5000, y: 0.0061100521000298615 },
+                { x: 7500, y: 0.00887034610000228 },
+                { x: 10000, y: 0.011318111099990346 },
+                { x: 20000, y: 0.028150250699991376 },
+                { x: 30000, y: 0.04205129060001127 },
+                { x: 40000, y: 0.05596582059997672 },
+                // { x: 10000000, y: 31.373361635600002},
+              ],
+            },
+            {
+              type: "line",
+              name: "Javascript",
+              indexLabelFontSize: 16,
+              showInLegend: true,
+              dataPoints: [
+                { x: 100, y: 0.00010166070461273194 },
+                { x: 500, y: 0.00044004269838333134 },
+                { x: 1000, y: 0.00046579220294952397 },
+                { x: 2500, y: 0.001545291805267334 },
+                { x: 5000, y: 0.002865311497449875 },
+                { x: 7500, y: 0.003907053297758103 },
+                { x: 10000, y: 0.0049298179984092715 },
+                { x: 20000, y: 0.01429188579916954 },
+                { x: 30000, y: 0.023930758100748063 },
+                { x: 40000, y: 0.03047450699806213 },
+                // { x: 10000000, y: 12.975363776004315},
+              ],
+            },
+          ],
+        });
+        chart.render();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="chartContainer" style="height: 750px; width: 100%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>
